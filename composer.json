@@ -1,0 +1,28 @@
+{
+  "name": "eukles/api-slim",
+  "license": "proprietary",
+  "type": "project",
+  "description": "Action layer in a Slim application to work with Propel ActiveRecords created and fetched from Request",
+  "authors": [
+    {
+      "name": "Steve Mareigner",
+      "email": "steve.mareigner@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Eukles\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Eukles\\": "tests/"
+    }
+  },
+  "require": {
+    "slim/slim": "^3.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "5.4.*"
+  }
+}

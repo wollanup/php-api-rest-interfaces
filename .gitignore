@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+vendor/
+build/api/
+build/code-browser/
+build/coverage/
+build/logs/
+build/pdepend/
+build/phpdox/
+build/testdox/
+build/composer.phar
+composer.lock
+cache.properties
