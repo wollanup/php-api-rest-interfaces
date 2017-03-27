@@ -9,7 +9,7 @@
 namespace Eukles\Service\Route;
 
 use Eukles\Service\Route\Exception\RouteEmptyValueException;
-use Eukles\Slim\RouterInterface;
+use Eukles\Service\Router\RouterInterface;
 use Psr\Container\ContainerInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 
@@ -138,7 +138,7 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      * @return string
      */
     public function getPackage();
-    
+
     /**
      * @param string $package
      *
