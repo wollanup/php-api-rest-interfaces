@@ -8,7 +8,7 @@
 
 namespace Eukles\Service\RoutesClasses;
 
-class ResourceRouteMapClassesServiceMissingException extends \Exception
+class RoutesClassesServiceMissingException extends \Exception
 {
     
 }

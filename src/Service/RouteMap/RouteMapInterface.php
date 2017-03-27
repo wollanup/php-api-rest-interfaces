@@ -6,32 +6,26 @@
  * Time: 17:12
  */
 
-namespace Eukles\Service\ResourceRoute;
+namespace Eukles\Service\RouteMap;
 
-use Eukles\Action\ActionInterface;
-use Eukles\Service\Container\EuklesContainerInterface;
-use Eukles\Slim\RouterInterface;
+use Eukles\Service\Router\RouterInterface;
+use Psr\Container\ContainerInterface;
 
-interface ResourceRouteMapInterface extends \Iterator
+interface RouteMapInterface extends \Iterator
 {
-    
-    public function __construct(EuklesContainerInterface $container);
+
+    public function __construct(ContainerInterface $container);
 
     /**
-     * @return string|ActionInterface
-     */
-    public function getActionClass();
-    
-    /**
-     * @return EuklesContainerInterface
+     * @return ContainerInterface
      */
     public function getContainer();
-    
+
     /**
      * @return string
      */
     public function getPackage();
-    
+
     /**
      * Map all Routes contained in this RouteMap to th given Router Object
      *

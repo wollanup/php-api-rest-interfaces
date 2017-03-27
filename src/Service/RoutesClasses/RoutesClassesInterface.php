@@ -15,7 +15,7 @@ namespace Eukles\Service\RoutesClasses;
  *
  * @package Eukles\Service\RoutesClasses
  */
-interface ResourceRouteMapClassesInterface extends \Iterator
+interface RoutesClassesInterface extends \Iterator
 {
     
 }

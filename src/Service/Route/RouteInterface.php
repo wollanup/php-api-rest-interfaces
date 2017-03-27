@@ -6,16 +6,14 @@
  * Time: 11:40
  */
 
-namespace Eukles\Service\ResourceRoute;
+namespace Eukles\Service\Route;
 
-use Eukles\Propel\Runtime\ActiveRecord\ActiveRecordRequestInterface;
-use Eukles\Service\ResourceRoute\Exception\ResourceRouteEmptyValueException;
+use Eukles\Service\Route\Exception\RouteEmptyValueException;
 use Eukles\Slim\RouterInterface;
 use Psr\Container\ContainerInterface;
-use Slim\Interfaces\RouteInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 
-interface ResourceRouteInterface extends RouteInterface
+interface RouteInterface extends \Slim\Interfaces\RouteInterface
 {
 
     const POST = "POST";
@@ -27,7 +25,7 @@ interface ResourceRouteInterface extends RouteInterface
     /**
      * @param string|RoleInterface $role
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function addRole($role);
 
@@ -40,13 +38,13 @@ interface ResourceRouteInterface extends RouteInterface
 
     /**
      * @return string
-     * @throws ResourceRouteEmptyValueException
+     * @throws RouteEmptyValueException
      */
     public function getActionClass();
 
     /**
      * @return string
-     * @throws ResourceRouteEmptyValueException
+     * @throws RouteEmptyValueException
      */
     public function getActionMethod();
 
@@ -68,14 +66,8 @@ interface ResourceRouteInterface extends RouteInterface
     public function getNameOfInjectedParam();
 
     /**
-     * @return string|ActiveRecordRequestInterface
-     * @throws ResourceRouteEmptyValueException
-     */
-    public function getRequestClass();
-
-    /**
      * @return string
-     * @throws ResourceRouteEmptyValueException
+     * @throws RouteEmptyValueException
      */
     public function getResource();
 
@@ -86,7 +78,7 @@ interface ResourceRouteInterface extends RouteInterface
 
     /**
      * @return string
-     * @throws ResourceRouteEmptyValueException
+     * @throws RouteEmptyValueException
      */
     public function getVerb();
 
@@ -103,21 +95,21 @@ interface ResourceRouteInterface extends RouteInterface
     /**
      * @param bool $forceFetch
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function makeInstance($forceFetch = false);
 
     /**
      * @param string $actionClass
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setActionClass($actionClass);
 
     /**
      * @param string $actionMethod
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setActionMethod($actionMethod);
 
@@ -131,14 +123,14 @@ interface ResourceRouteInterface extends RouteInterface
     /**
      * @param string $identifier
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setIdentifier($identifier);
 
     /**
      * @param string $nameOfInjectedParam
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setNameOfInjectedParam($nameOfInjectedParam);
 
@@ -157,28 +149,28 @@ interface ResourceRouteInterface extends RouteInterface
     /**
      * @param string $pattern
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setPattern($pattern);
 
     /**
      * @param string $requestClass
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setRequestClass($requestClass);
 
     /**
      * @param array $roles
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setRoles(array $roles);
 
     /**
      * @param string $verb
      *
-     * @return ResourceRouteInterface
+     * @return RouteInterface
      */
     public function setVerb($verb);
 }
