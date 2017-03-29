@@ -1,7 +1,7 @@
 {
-  "name": "eukles/api-slim",
-  "license": "proprietary",
-  "type": "project",
+  "name": "wollanup/propel-api-rest-interfaces",
+  "license": "MIT",
+  "type": "library",
   "description": "Action layer in a Slim application to work with Propel ActiveRecords created and fetched from Request",
   "authors": [
     {
@@ -9,28 +9,14 @@
       "email": "steve.mareigner@gmail.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git@gitlab.cybble.dev:api/utils.git"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "Eukles\\": "src/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "Eukles\\": "tests/"
-    }
-  },
   "require": {
     "slim/slim": "^3.4",
     "zendframework/zend-permissions-acl": "^2.6",
-    "eukles/api-utils": "^1.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "5.4.*"
+    "propel/propel": "~2.0@dev"
   }
 }

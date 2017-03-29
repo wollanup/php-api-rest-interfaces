@@ -6,10 +6,9 @@
  * Time: 11:40
  */
 
-namespace Eukles\Service\Route;
+namespace Eukles\Service\Router;
 
-use Eukles\Service\Route\Exception\RouteEmptyValueException;
-use Eukles\Service\Router\RouterInterface;
+use Eukles\Service\Router\Exception\RouteEmptyValueException;
 use Psr\Container\ContainerInterface;
 use Zend\Permissions\Acl\Role\RoleInterface;
 

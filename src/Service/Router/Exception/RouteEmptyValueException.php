@@ -6,7 +6,7 @@
  * Time: 12:47
  */
 
-namespace Eukles\Service\Route\Exception;
+namespace Eukles\Service\Router\Exception;
 
 class RouteEmptyValueException extends \Exception
 {

@@ -6,7 +6,7 @@
  * Time: 17:12
  */
 
-namespace Eukles\Service\RouteMap;
+namespace Eukles\RouteMap;
 
 use Eukles\Service\Router\RouterInterface;
 use Psr\Container\ContainerInterface;

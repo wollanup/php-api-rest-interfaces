@@ -6,7 +6,7 @@
  * Time: 11:18
  */
 
-namespace Eukles\Service\RoutesClasses;
+namespace Eukles\Service\RoutesClasses\Exception;
 
 class RoutesClassesServiceMissingException extends \Exception
 {

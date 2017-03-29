@@ -8,7 +8,6 @@
 
 namespace Eukles\Service\Router;
 
-use Eukles\Service\Route\RouteInterface;
 
 interface RouterInterface extends \Slim\Interfaces\RouterInterface
 {
