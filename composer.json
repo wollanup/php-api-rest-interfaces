@@ -1,8 +1,8 @@
 {
-  "name": "wollanup/propel-api-rest-interfaces",
+  "name": "wollanup/php-api-rest-interfaces",
   "license": "MIT",
   "type": "library",
-  "description": "Action layer in a Slim application to work with Propel ActiveRecords created and fetched from Request",
+  "description": "Interfaces and Exceptions for php-api-rest project implementation",
   "authors": [
     {
       "name": "Steve Mareigner",
