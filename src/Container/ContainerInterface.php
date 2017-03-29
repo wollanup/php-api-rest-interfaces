@@ -36,7 +36,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     /**
      * @return EntityFactoryInterface
      */
-    public function getActiveRecordRequestFactory();
+    public function getEntityFactory();
 
     /**
      * @return Request
