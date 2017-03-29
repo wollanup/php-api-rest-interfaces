@@ -8,6 +8,10 @@
 
 namespace Eukles\Container;
 
+use Eukles\Entity\EntityFactoryInterface;
+use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
+use Eukles\Service\ResponseBuilder\ResponseBuilderInterface;
+use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
 use Eukles\Service\RoutesClasses\RoutesClassesInterface;
 use Slim\Http\Request;
 use Slim\Interfaces\RouterInterface;
@@ -30,7 +34,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const ROUTES_CLASSES = 'routesClasses';
 
     /**
-     * @return ActiveRecordRequestFactoryInterface
+     * @return EntityFactoryInterface
      */
     public function getActiveRecordRequestFactory();
 
@@ -43,11 +47,6 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return RequestQueryModifierInterface
      */
     public function getRequestQueryModifier();
-
-    /**
-     * @return RoutesClassesInterface
-     */
-    public function getRoutesClasses();
 
     /**
      * @return ResponseBuilderInterface
@@ -63,5 +62,10 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return RouterInterface
      */
     public function getRouter();
+    
+    /**
+     * @return RoutesClassesInterface
+     */
+    public function getRoutesClasses();
 
 }
