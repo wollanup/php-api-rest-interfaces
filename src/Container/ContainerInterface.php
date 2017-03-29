@@ -25,11 +25,11 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const RESPONSE_FORMATTER = 'responseFormatter';
     const RESPONSE_BUILDER = 'responseBuilder';
     const REQUEST_QUERY_MODIFIER = 'requestQueryModifier';
-    const ACTIVE_RECORD_REQUEST_FACTORY = 'activeRecordRequestFactory';
+    const ENTITY_FACTORY = 'entityFactory';
     const HANDLER = 'foundHandler';
     const SESSION = 'session';
-    const RESOURCE_ROUTES_MAP = 'resourceRouteMap';
-    const ACTIVE_RECORD_REQUEST = 'activeRecordRequest';
+    const ROUTES_MAP = 'routeMap';
+    const ENTITY_REQUEST = 'entityRequest';
     const ROUTER = 'router';
     const ROUTES_CLASSES = 'routesClasses';
 
