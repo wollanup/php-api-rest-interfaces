@@ -26,6 +26,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const RESPONSE_FORMATTER = 'responseFormatter';
     const RESPONSE_BUILDER = 'responseBuilder';
     const REQUEST_QUERY_MODIFIER = 'requestQueryModifier';
+    const REQUEST_PAGINATION = 'requestPagination';
     const ENTITY_FACTORY = 'entityFactory';
     const HANDLER = 'foundHandler';
     const SESSION = 'session';
