@@ -8,8 +8,6 @@
 
 namespace Eukles\Service\Pagination;
 
-use Psr\Http\Message\ServerRequestInterface;
-
 interface PaginationInterface
 {
     
@@ -33,13 +31,6 @@ interface PaginationInterface
      *
      */
     const DEFAULT_PAGE = 1;
-    
-    /**
-     * RequestPagination constructor.
-     *
-     * @param ServerRequestInterface $request
-     */
-    public function __construct(ServerRequestInterface $request);
     
     /**
      * @return int

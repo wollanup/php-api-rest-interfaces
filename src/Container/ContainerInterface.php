@@ -9,6 +9,7 @@
 namespace Eukles\Container;
 
 use Eukles\Entity\EntityFactoryInterface;
+use Eukles\Service\Pagination\RequestPaginationInterface;
 use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
 use Eukles\Service\ResponseBuilder\ResponseBuilderInterface;
 use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
@@ -43,6 +44,11 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      */
     public function getRequest();
 
+    /**
+     * @return RequestPaginationInterface
+     */
+    public function getRequestPagination();
+    
     /**
      * @return RequestQueryModifierInterface
      */
