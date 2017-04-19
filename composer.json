@@ -16,7 +16,8 @@
   },
   "require": {
     "slim/slim": "^3.4",
+    "propel/propel": "~2.0@dev",
     "zendframework/zend-permissions-acl": "^2.6",
-    "propel/propel": "~2.0@dev"
+    "symfony/translation": "^3.2"
   }
 }

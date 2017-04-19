@@ -1,6 +1,7 @@
 <?php
 namespace Eukles\Entity;
 
+use Eukles\Service\QueryModifier\Modifier\Exception\RequestFactoryExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -11,7 +12,7 @@ use Psr\Http\Message\ServerRequestInterface;
  */
 interface EntityFactoryInterface
 {
-
+    
     /**
      * Create a new instance of activeRecord and add it to Request attributes
      *
@@ -30,7 +31,7 @@ interface EntityFactoryInterface
         callable $next,
         $nameOfParameterToAdd = null
     );
-
+    
     /**
      * Fetch an existing instance of activeRecord and add it to Request attributes
      *
@@ -40,6 +41,7 @@ interface EntityFactoryInterface
      * @param callable                     $next
      * @param                              $nameOfParameterToAdd
      *
+     * @throws RequestFactoryExceptionInterface
      * @return ResponseInterface
      */
     public function fetch(
