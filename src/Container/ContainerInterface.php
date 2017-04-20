@@ -37,7 +37,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const ROUTER = 'router';
     const ROUTES_CLASSES = 'routesClasses';
     const ENTITY_REQUEST_ERROR_HANDLER = 'entityRequestErrorHandler';
-    const ACTION_ERROR_HANDLER = 'entityRequestErrorHandler';
+    const ACTION_ERROR_HANDLER = 'actionErrorHandler';
     
     /**
      * @return ActionErrorInterface
