@@ -8,7 +8,6 @@
 
 namespace Eukles\Slim\Handlers;
 
-use Eukles\Entity\EntityRequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -16,27 +15,14 @@ interface ActionErrorInterface
 {
     
     /**
-     * @param EntityRequestInterface $entityRequest
+     * @param \Exception             $exception
      * @param ServerRequestInterface $request
      * @param ResponseInterface      $response
      *
      * @return ResponseInterface
      */
-    public function entityNotFound(
-        EntityRequestInterface $entityRequest,
-        ServerRequestInterface $request,
-        ResponseInterface $response
-    );
-    
-    /**
-     * @param EntityRequestInterface $entityRequest
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface      $response
-     *
-     * @return ResponseInterface
-     */
-    public function primaryKeyNotFound(
-        EntityRequestInterface $entityRequest,
+    public function __invoke(
+        \Exception $exception,
         ServerRequestInterface $request,
         ResponseInterface $response
     );
