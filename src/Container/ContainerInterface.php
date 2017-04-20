@@ -14,6 +14,7 @@ use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
 use Eukles\Service\ResponseBuilder\ResponseBuilderInterface;
 use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
 use Eukles\Service\RoutesClasses\RoutesClassesInterface;
+use Eukles\Slim\Handlers\ActionErrorInterface;
 use Eukles\Slim\Handlers\EntityRequestErrorInterface;
 use Slim\Http\Request;
 use Slim\Interfaces\RouterInterface;
@@ -36,17 +37,23 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const ROUTER = 'router';
     const ROUTES_CLASSES = 'routesClasses';
     const ENTITY_REQUEST_ERROR_HANDLER = 'entityRequestErrorHandler';
-
+    const ACTION_ERROR_HANDLER = 'entityRequestErrorHandler';
+    
+    /**
+     * @return ActionErrorInterface
+     */
+    public function getActionErrorHandler();
+    
     /**
      * @return EntityFactoryInterface
      */
     public function getEntityFactory();
-    
+
     /**
      * @return EntityRequestErrorInterface
      */
     public function getEntityRequestErrorHandler();
-
+    
     /**
      * @return Request
      */
@@ -66,7 +73,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return ResponseBuilderInterface
      */
     public function getResponseBuilder();
-
+    
     /**
      * @return ResponseFormatterInterface
      */
