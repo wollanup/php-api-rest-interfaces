@@ -63,6 +63,11 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      * @return string|null
      */
     public function getNameOfInjectedParam();
+    
+    /**
+     * @return string
+     */
+    public function getPackage();
 
     /**
      * @return string
@@ -85,11 +90,23 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      * @return bool
      */
     public function hasRoles();
+    
+    /**
+     * @return bool
+     */
+    public function isMakeCollection();
 
     /**
      * @return bool
      */
     public function isMakeInstance();
+    
+    /**
+     * @param bool $forceFetch
+     *
+     * @return RouteInterface
+     */
+    public function makeCollection($forceFetch = false);
 
     /**
      * @param bool $forceFetch
@@ -132,11 +149,6 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      * @return RouteInterface
      */
     public function setNameOfInjectedParam($nameOfInjectedParam);
-
-    /**
-     * @return string
-     */
-    public function getPackage();
 
     /**
      * @param string $package
