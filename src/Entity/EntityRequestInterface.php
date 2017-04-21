@@ -58,12 +58,6 @@ interface EntityRequestInterface
     
     /**
      *
-     * @return string
-     */
-    public function buildNameOfParameterToAdd();
-    
-    /**
-     *
      * @return string|ActionInterface
      */
     public function getActionClassName();
@@ -110,6 +104,14 @@ interface EntityRequestInterface
      * @return array List of modifiable properties
      */
     public function getModifiableProperties();
+    
+    /**
+     *
+     * @param bool $plural
+     *
+     * @return string
+     */
+    public function getNameOfParameterToAdd($plural = false);
     
     /**
      * @return mixed
