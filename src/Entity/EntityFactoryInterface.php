@@ -49,4 +49,24 @@ interface EntityFactoryInterface
         callable $next,
         $nameOfParameterToAdd = null
     );
+    
+    /**
+     * Fetch an existing collection of activeRecords and add it to Request attributes
+     *
+     * @param EntityRequestInterface       $entityRequest
+     * @param ServerRequestInterface       $request
+     * @param ResponseInterface            $response
+     * @param callable                     $next
+     * @param                              $nameOfParameterToAdd
+     *
+     * @return ResponseInterface
+     */
+    public function fetchCollection(
+        EntityRequestInterface $entityRequest,
+        ServerRequestInterface $request,
+        ResponseInterface $response,
+        callable $next,
+        $nameOfParameterToAdd = null
+    );
+    
 }
