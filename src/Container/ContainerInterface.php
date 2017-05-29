@@ -94,5 +94,5 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     /**
      * @return XssCleanerInterface
      */
-    public function getXssCleanerInterface();
+    public function getXssCleaner();
 }
