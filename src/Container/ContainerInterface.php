@@ -14,6 +14,7 @@ use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
 use Eukles\Service\ResponseBuilder\ResponseBuilderInterface;
 use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
 use Eukles\Service\RoutesClasses\RoutesClassesInterface;
+use Eukles\Service\XssCleaner\XssCleanerInterface;
 use Eukles\Slim\Handlers\ActionErrorInterface;
 use Eukles\Slim\Handlers\EntityRequestErrorInterface;
 use Slim\Http\Request;
@@ -24,7 +25,7 @@ use Slim\Interfaces\RouterInterface;
  */
 interface ContainerInterface extends \Psr\Container\ContainerInterface
 {
-
+    
     const RESPONSE_FORMATTER = 'responseFormatter';
     const RESPONSE_BUILDER = 'responseBuilder';
     const REQUEST_QUERY_MODIFIER = 'requestQueryModifier';
@@ -38,6 +39,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const ROUTES_CLASSES = 'routesClasses';
     const ENTITY_REQUEST_ERROR_HANDLER = 'entityRequestErrorHandler';
     const ACTION_ERROR_HANDLER = 'actionErrorHandler';
+    const XSS_CLEANER = 'xssCleaner';
     
     /**
      * @return ActionErrorInterface
@@ -48,7 +50,7 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return EntityFactoryInterface
      */
     public function getEntityFactory();
-
+    
     /**
      * @return EntityRequestErrorInterface
      */
@@ -63,12 +65,12 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return RequestPaginationInterface
      */
     public function getRequestPagination();
-
+    
     /**
      * @return RequestQueryModifierInterface
      */
     public function getRequestQueryModifier();
-
+    
     /**
      * @return ResponseBuilderInterface
      */
@@ -88,5 +90,9 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return RoutesClassesInterface
      */
     public function getRoutesClasses();
-
+    
+    /**
+     * @return XssCleanerInterface
+     */
+    public function getXssCleanerInterface();
 }
