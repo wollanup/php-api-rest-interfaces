@@ -74,7 +74,7 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      *
      * @return string|EntityRequestInterface
      */
-    public function getRequestClass($requestClass);
+    public function getRequestClass();
     
     /**
      * @return string
