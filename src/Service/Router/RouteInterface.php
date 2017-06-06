@@ -37,6 +37,13 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
     public function bindToRouter(RouterInterface $router);
     
     /**
+     * Mark route as deprecated (won't be documented)
+     *
+     * @return RouteInterface
+     */
+    public function deprecated();
+    
+    /**
      * @return string
      * @throws RouteEmptyValueException
      */
@@ -97,6 +104,11 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      * @return bool
      */
     public function hasRoles();
+    
+    /**
+     * @return bool
+     */
+    public function isDeprecated();
     
     /**
      * @return bool

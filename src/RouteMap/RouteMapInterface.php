@@ -17,12 +17,6 @@ interface RouteMapInterface extends \Iterator
     
     public function __construct(ContainerInterface $container);
     
-    /**
-     * Mark route as deprecated (won't be documented)
-     *
-     * @return RouteMapInterface
-     */
-    public function deprecated();
     
     /**
      * @return string|ActionInterface
