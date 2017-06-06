@@ -8,24 +8,57 @@
 
 namespace Eukles\RouteMap;
 
+use Eukles\Action\ActionInterface;
 use Eukles\Service\Router\RouterInterface;
 use Psr\Container\ContainerInterface;
 
 interface RouteMapInterface extends \Iterator
 {
-
+    
     public function __construct(ContainerInterface $container);
-
+    
+    /**
+     * Mark route as deprecated (won't be documented)
+     *
+     * @return RouteMapInterface
+     */
+    public function deprecated();
+    
+    /**
+     * @return string|ActionInterface
+     */
+    public function getActionClass();
+    
     /**
      * @return ContainerInterface
      */
     public function getContainer();
-
+    
     /**
      * @return string
      */
     public function getPackage();
-
+    
+    /**
+     * @return string
+     */
+    public function getPrefix();
+    
+    /**
+     * @return string
+     */
+    public function getResource();
+    
+    /**
+     * @return bool
+     */
+    public function hasPackage();
+    
+    /**
+     * @return bool
+     */
+    public function isSubResourceOfPackage();
+    
     /**
      * Map all Routes contained in this RouteMap to th given Router Object
      *
