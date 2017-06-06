@@ -8,6 +8,7 @@
 
 namespace Eukles\Service\Router;
 
+use Eukles\RouteMap\RouteMapInterface;
 
 interface RouterInterface extends \Slim\Interfaces\RouterInterface
 {
@@ -18,4 +19,9 @@ interface RouterInterface extends \Slim\Interfaces\RouterInterface
      * @return RouteInterface
      */
     public function addResourceRoute(RouteInterface $resourceRoute);
+    
+    /**
+     * @return RouteMapInterface[]
+     */
+    public function getRoutesMap();
 }
