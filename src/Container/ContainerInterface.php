@@ -14,7 +14,6 @@ use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
 use Eukles\Service\ResponseBuilder\ResponseBuilderInterface;
 use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
 use Eukles\Service\RoutesClasses\RoutesClassesInterface;
-use Eukles\Service\XssCleaner\XssCleanerInterface;
 use Eukles\Slim\Handlers\ActionErrorInterface;
 use Eukles\Slim\Handlers\EntityRequestErrorInterface;
 use Slim\Http\Request;
@@ -39,7 +38,6 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const ROUTES_CLASSES = 'routesClasses';
     const ENTITY_REQUEST_ERROR_HANDLER = 'entityRequestErrorHandler';
     const ACTION_ERROR_HANDLER = 'actionErrorHandler';
-    const XSS_CLEANER = 'xssCleaner';
     
     /**
      * @return ActionErrorInterface
@@ -91,8 +89,4 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      */
     public function getRoutesClasses();
     
-    /**
-     * @return XssCleanerInterface
-     */
-    public function getXssCleaner();
 }
