@@ -228,7 +228,7 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      *
      * @param $bool
      *
-     * @return mixed
+     * @return RouteInterface
      */
     public function useRequest($bool);
 }
