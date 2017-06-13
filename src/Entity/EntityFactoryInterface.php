@@ -15,11 +15,12 @@ interface EntityFactoryInterface
     /**
      * Create a new instance of activeRecord and add it to Request attributes
      *
-     * @param EntityRequestInterface       $activeRecordRequest
-     * @param ServerRequestInterface       $request
-     * @param ResponseInterface            $response
-     * @param callable                     $next
-     * @param                              $nameOfParameterToAdd
+     * @param EntityRequestInterface $activeRecordRequest
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface      $response
+     * @param callable               $next
+     * @param string                 $nameOfParameterToAdd
+     * @param bool                   $useRequestParameters
      *
      * @return ResponseInterface
      */
@@ -28,17 +29,19 @@ interface EntityFactoryInterface
         ServerRequestInterface $request,
         ResponseInterface $response,
         callable $next,
-        $nameOfParameterToAdd = null
+        $nameOfParameterToAdd = null,
+        $useRequestParameters = true
     );
     
     /**
      * Fetch an existing instance of activeRecord and add it to Request attributes
      *
-     * @param EntityRequestInterface       $activeRecordRequest
-     * @param ServerRequestInterface       $request
-     * @param ResponseInterface            $response
-     * @param callable                     $next
-     * @param                              $nameOfParameterToAdd
+     * @param EntityRequestInterface $activeRecordRequest
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface      $response
+     * @param callable               $next
+     * @param string                 $nameOfParameterToAdd
+     * @param bool                   $useRequestParameters
      *
      * @return ResponseInterface
      */
@@ -47,7 +50,8 @@ interface EntityFactoryInterface
         ServerRequestInterface $request,
         ResponseInterface $response,
         callable $next,
-        $nameOfParameterToAdd = null
+        $nameOfParameterToAdd = null,
+        $useRequestParameters = true
     );
     
     /**
