@@ -213,4 +213,15 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      * @return RouteInterface
      */
     public function setVerb($verb);
+    
+    /**
+     * When route makes an instance, it can use request parameters to alter instance.
+     *
+     * Enabled by default.
+     *
+     * @param $bool
+     *
+     * @return mixed
+     */
+    public function useRequest($bool);
 }
