@@ -106,6 +106,13 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
     public function hasRoles();
     
     /**
+     * Tells if route must use request or not to alter instance
+     *
+     * @return mixed
+     */
+    public function hasToUseRequest();
+    
+    /**
      * @return bool
      */
     public function isDeprecated();
