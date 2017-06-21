@@ -153,6 +153,13 @@ interface EntityRequestInterface
     public function getRelationsNames();
     
     /**
+     * None, all or partial list of properties
+     *
+     * @return array List of writable properties
+     */
+    public function getRequiredWritableProperties();
+    
+    /**
      * @return TableMap
      */
     public function getTableMap();
