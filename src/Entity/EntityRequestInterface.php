@@ -1,4 +1,5 @@
 <?php
+
 namespace Eukles\Entity;
 
 use Eukles\Action\ActionInterface;
@@ -90,13 +91,6 @@ interface EntityRequestInterface
      * @return array List of exposed relations
      */
     public function getExposedRelations();
-    
-    /**
-     * None, all or partial list of properties
-     *
-     * @return array List of hidden properties
-     */
-    public function getHiddenProperties();
     
     /**
      * None, all or partial list of properties
