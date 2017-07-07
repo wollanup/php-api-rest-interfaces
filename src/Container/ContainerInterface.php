@@ -8,6 +8,7 @@
 
 namespace Eukles\Container;
 
+use Eukles\Config\ConfigInterface;
 use Eukles\Entity\EntityFactoryInterface;
 use Eukles\Service\Pagination\RequestPaginationInterface;
 use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
@@ -43,6 +44,11 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return ActionErrorInterface
      */
     public function getActionErrorHandler();
+    
+    /**
+     * @return ConfigInterface
+     */
+    public function getConfig();
     
     /**
      * @return EntityFactoryInterface
@@ -88,5 +94,4 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
      * @return RoutesClassesInterface
      */
     public function getRoutesClasses();
-    
 }
