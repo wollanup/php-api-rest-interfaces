@@ -42,26 +42,26 @@ interface ModifierInterface
      *
      * @return array
      */
-    public function getModifier($property);
+    public function getModifier($property): array;
 
     /**
      * @return array
      */
-    public function getModifiers();
+    public function getModifiers(): array;
 
     /**
      * Return the name of the modifier
      *
      * @return string
      */
-    public function getName();
+    public function getName(): string;
 
     /**
      * @param $property
      *
      * @return bool
      */
-    public function hasModifier($property);
+    public function hasModifier($property): bool;
     /**
      * @param $property
      *
@@ -93,5 +93,5 @@ interface ModifierInterface
      *
      * @return bool
      */
-    public function hasAllRequiredData(array $modifier);
+    public function hasAllRequiredData(array $modifier): bool;
 }

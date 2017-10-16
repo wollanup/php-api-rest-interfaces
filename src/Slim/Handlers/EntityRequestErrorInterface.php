@@ -26,7 +26,7 @@ interface EntityRequestErrorInterface
         EntityRequestInterface $entityRequest,
         ServerRequestInterface $request,
         ResponseInterface $response
-    );
+    ): ResponseInterface;
     
     /**
      * @param EntityRequestInterface $entityRequest
@@ -39,5 +39,5 @@ interface EntityRequestErrorInterface
         EntityRequestInterface $entityRequest,
         ServerRequestInterface $request,
         ResponseInterface $response
-    );
+    ): ResponseInterface;
 }

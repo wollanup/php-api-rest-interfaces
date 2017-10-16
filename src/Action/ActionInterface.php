@@ -1,4 +1,5 @@
 <?php
+
 namespace Eukles\Action;
 
 use Eukles\Service\QueryModifier\QueryModifierInterface;
@@ -23,47 +24,47 @@ interface ActionInterface
     public function __construct(ContainerInterface $c);
     
     /**
-     * Action factory
-     *
-     * @param ContainerInterface $c
-     *
-     * @return ActionInterface
-     */
-    public static function create(ContainerInterface $c);
-    
-    /**
      * @param QueryModifierInterface $qm
      *
      * @return ModelCriteria
      */
-    public function createQuery(QueryModifierInterface $qm = null);
+    public function createQuery(QueryModifierInterface $qm = null): ModelCriteria;
     
     /**
      * @return ContainerInterface
      */
-    public function getContainer();
+    public function getContainer(): ContainerInterface;
     
     /**
      * @return ServerRequestInterface
      */
-    public function getRequest();
+    public function getRequest(): ServerRequestInterface;
     
     /**
      * @return ResponseInterface
      */
-    public function getResponse();
+    public function getResponse(): ResponseInterface;
     
     /**
      * @param ServerRequestInterface $serverRequest
      *
      * @return ActionInterface
      */
-    public function setRequest(ServerRequestInterface $serverRequest);
+    public function setRequest(ServerRequestInterface $serverRequest): ActionInterface;
     
     /**
      * @param ResponseInterface $response
      *
      * @return ActionInterface
      */
-    public function setResponse(ResponseInterface $response);
+    public function setResponse(ResponseInterface $response): ActionInterface;
+    
+    /**
+     * Action factory
+     *
+     * @param ContainerInterface $c
+     *
+     * @return ActionInterface
+     */
+    public static function create(ContainerInterface $c): ActionInterface;
 }

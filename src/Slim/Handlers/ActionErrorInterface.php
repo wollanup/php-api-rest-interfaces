@@ -25,5 +25,5 @@ interface ActionErrorInterface
         \Exception $exception,
         ServerRequestInterface $request,
         ResponseInterface $response
-    );
+    ): ResponseInterface;
 }

@@ -18,10 +18,10 @@ interface RouterInterface extends \Slim\Interfaces\RouterInterface
      *
      * @return RouteInterface
      */
-    public function addResourceRoute(RouteInterface $resourceRoute);
+    public function addResourceRoute(RouteInterface $resourceRoute): RouteInterface;
     
     /**
      * @return RouteMapInterface[]
      */
-    public function getRoutesMap();
+    public function getRoutesMap(): array;
 }

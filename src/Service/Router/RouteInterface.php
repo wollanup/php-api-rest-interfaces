@@ -27,7 +27,7 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      *
      * @return RouteInterface
      */
-    public function addRole($role);
+    public function addRole($role): RouteInterface;
     
     /**
      * @param RouterInterface $router
@@ -41,19 +41,19 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      *
      * @return RouteInterface
      */
-    public function deprecated();
+    public function deprecated(): RouteInterface;
     
     /**
      * @return string
      * @throws RouteEmptyValueException
      */
-    public function getActionClass();
+    public function getActionClass(): string;
     
     /**
      * @return string
      * @throws RouteEmptyValueException
      */
-    public function getActionMethod();
+    public function getActionMethod(): string;
     
     /**
      * Return callable or string like "MyClass:myMethod"
@@ -65,7 +65,7 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
     /**
      * @return string
      */
-    public function getIdentifier();
+    public function getIdentifier(): string;
     
     /**
      * @return string|null
@@ -81,145 +81,145 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      *
      * @return string|EntityRequestInterface
      */
-    public function getRequestClass();
+    public function getRequestClass(): string;
     
     /**
      * @return string
      * @throws RouteEmptyValueException
      */
-    public function getResource();
+    public function getResource(): string;
     
     /**
      * @return array
      */
-    public function getRoles();
+    public function getRoles(): array;
     
     /**
      * @return string
      * @throws RouteEmptyValueException
      */
-    public function getVerb();
+    public function getVerb(): string;
     
     /**
      * @return bool
      */
-    public function hasRoles();
+    public function hasRoles(): bool;
     
     /**
      * Tells if route must use request or not to alter instance
      *
-     * @return mixed
+     * @return bool
      */
-    public function hasToUseRequest();
+    public function hasToUseRequest(): bool;
     
     /**
      * @return bool
      */
-    public function isDeprecated();
+    public function isDeprecated(): bool;
     
     /**
      * @return bool
      */
-    public function isMakeCollection();
+    public function isMakeCollection(): bool;
     
     /**
      * @return bool
      */
-    public function isMakeInstance();
+    public function isMakeInstance(): bool;
     
     /**
      * @return bool
      */
-    public function isMakeInstanceCreate();
+    public function isMakeInstanceCreate(): bool;
     
     /**
      * @return bool
      */
-    public function isMakeInstanceFetch();
+    public function isMakeInstanceFetch(): bool;
     
     /**
      * @param bool $forceFetch
      *
      * @return RouteInterface
      */
-    public function makeCollection($forceFetch = false);
+    public function makeCollection(bool $forceFetch = false): RouteInterface;
     
     /**
      * @param bool $forceFetch
      *
      * @return RouteInterface
      */
-    public function makeInstance($forceFetch = false);
+    public function makeInstance($forceFetch = false): RouteInterface;
     
     /**
      * @param string $actionClass
      *
      * @return RouteInterface
      */
-    public function setActionClass($actionClass);
+    public function setActionClass(string $actionClass): RouteInterface;
     
     /**
      * @param string $actionMethod
      *
      * @return RouteInterface
      */
-    public function setActionMethod($actionMethod);
+    public function setActionMethod(string $actionMethod): RouteInterface;
     
     /**
      * @param ContainerInterface $container
      *
-     * @return mixed
+     * @return RouteInterface
      */
-    public function setContainer(ContainerInterface $container);
+    public function setContainer(ContainerInterface $container): RouteInterface;
     
     /**
      * @param string $identifier
      *
      * @return RouteInterface
      */
-    public function setIdentifier($identifier);
+    public function setIdentifier(string $identifier): RouteInterface;
     
     /**
      * @param string $nameOfInjectedParam
      *
      * @return RouteInterface
      */
-    public function setNameOfInjectedParam($nameOfInjectedParam);
+    public function setNameOfInjectedParam(string $nameOfInjectedParam): RouteInterface;
     
     /**
      * @param string $package
      *
      * @return RouteInterface
      */
-    public function setPackage($package);
+    public function setPackage(string $package): RouteInterface;
     
     /**
      * @param string $pattern
      *
      * @return RouteInterface
      */
-    public function setPattern($pattern);
+    public function setPattern(string $pattern): RouteInterface;
     
     /**
      * @param string $requestClass
      *
      * @return RouteInterface
      */
-    public function setRequestClass($requestClass);
+    public function setRequestClass(string $requestClass): RouteInterface;
     
     /**
      * @param array $roles
      *
      * @return RouteInterface
      */
-    public function setRoles(array $roles);
+    public function setRoles(array $roles): RouteInterface;
     
     /**
      * @param string $verb
      *
      * @return RouteInterface
      */
-    public function setVerb($verb);
+    public function setVerb(string $verb): RouteInterface;
     
     /**
      * When route makes an instance, it can use request parameters to alter instance.
@@ -230,5 +230,5 @@ interface RouteInterface extends \Slim\Interfaces\RouteInterface
      *
      * @return RouteInterface
      */
-    public function useRequest($bool);
+    public function useRequest(string $bool): RouteInterface;
 }

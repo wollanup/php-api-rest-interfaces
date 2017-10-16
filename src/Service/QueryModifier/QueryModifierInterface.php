@@ -29,5 +29,5 @@ interface QueryModifierInterface
      *
      * @return QueryModifierInterface
      */
-    public function setQuery(ModelCriteria $query);
+    public function setQuery(ModelCriteria $query): QueryModifierInterface;
 }

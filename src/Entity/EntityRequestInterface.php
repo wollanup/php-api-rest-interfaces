@@ -6,6 +6,7 @@ use Eukles\Action\ActionInterface;
 use Eukles\Container\ContainerInterface;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
 use Propel\Runtime\ActiveRecord\ActiveRecordInterface;
+use Propel\Runtime\Map\RelationMap;
 use Propel\Runtime\Map\TableMap;
 
 /**
@@ -61,7 +62,7 @@ interface EntityRequestInterface
      *
      * @return string|ActionInterface
      */
-    public function getActionClassName();
+    public function getActionClassName(): string;
     
     /**
      * List data usable from request, may vary according to HTTP verb
@@ -71,33 +72,33 @@ interface EntityRequestInterface
      *
      * @return array
      */
-    public function getAllowedDataFromRequest(array $requestParams, $httpMethod);
+    public function getAllowedDataFromRequest(array $requestParams, string $httpMethod): array;
     
     /**
      * @return ContainerInterface
      */
-    public function getContainer();
+    public function getContainer(): ContainerInterface;
     
     /**
      * None, all or partial list of properties
      *
      * @return array List of exposed properties
      */
-    public function getExposedProperties();
+    public function getExposedProperties(): array;
     
     /**
      * None, all or partial list of relations
      *
      * @return array List of exposed relations
      */
-    public function getExposedRelations();
+    public function getExposedRelations(): array;
     
     /**
      * None, all or partial list of properties
      *
      * @return array List of modifiable properties
      */
-    public function getModifiableProperties();
+    public function getModifiableProperties(): array;
     
     /**
      *
@@ -105,7 +106,7 @@ interface EntityRequestInterface
      *
      * @return string
      */
-    public function getNameOfParameterToAdd($plural = false);
+    public function getNameOfParameterToAdd(bool $plural = false): string;
     
     /**
      * @return mixed
@@ -121,7 +122,7 @@ interface EntityRequestInterface
      * @return \Propel\Runtime\Map\RelationMap                         The relation object
      * @throws \Propel\Runtime\Map\Exception\RelationNotFoundException When called on an inexistent relation
      */
-    public function getRelation($relation);
+    public function getRelation(string $relation): RelationMap;
     
     /**
      * Gets the type of the relation (on to one, one to many ...)
@@ -131,49 +132,49 @@ interface EntityRequestInterface
      * @return string Type of the relation (on to one, one to many ...)
      *
      */
-    public function getRelationType($relation);
+    public function getRelationType(string $relation): string;
     
     /**
      * @return \Propel\Runtime\Map\RelationMap[] array
      *
      */
-    public function getRelations();
+    public function getRelations(): array;
     
     /**
      * Gets names of the relations in CAMELNAME format (e.g. "myRelation")
      *
      * @return array
      */
-    public function getRelationsNames();
+    public function getRelationsNames(): array;
     
     /**
      * None, all or partial list of properties
      *
      * @return array List of writable properties
      */
-    public function getRequiredWritableProperties();
+    public function getRequiredWritableProperties(): array;
     
     /**
      * @return TableMap
      */
-    public function getTableMap();
+    public function getTableMap(): TableMap;
     
     /**
      * None, all or partial list of properties
      *
      * @return array List of writable properties
      */
-    public function getWritableProperties();
+    public function getWritableProperties(): array;
     
     /**
      * @return bool
      */
-    public function hasRelations();
+    public function hasRelations(): bool;
     
     /**
      * @return ActiveRecordInterface
      */
-    public function instantiateActiveRecord();
+    public function instantiateActiveRecord(): ActiveRecordInterface;
     
     /**
      * Does this relation is plural ?
@@ -183,7 +184,7 @@ interface EntityRequestInterface
      * @return bool
      * @throws \Propel\Runtime\Map\Exception\RelationNotFoundException When called on an inexistent relation
      */
-    public function isPluralRelation($relation);
+    public function isPluralRelation(string $relation): bool;
     
     /**
      * Does this property is a relation ?
@@ -192,33 +193,33 @@ interface EntityRequestInterface
      *
      * @return bool
      */
-    public function isRelation($relation);
+    public function isRelation(string $relation): bool;
     
     /**
      * @param $name
      *
      * @return bool
      */
-    public function isRelationManyToOne($name);
+    public function isRelationManyToOne(string $name): bool;
     
     /**
      * @param $name
      *
      * @return bool
      */
-    public function isRelationOneToMany($name);
+    public function isRelationOneToMany(string $name): bool;
     
     /**
      * @param $name
      *
      * @return bool
      */
-    public function isRelationOneToOne($name);
+    public function isRelationOneToOne(string $name): bool;
     
     /**
-     * @param $pk
+     * @param array|int $pk
      *
      * @return EntityRequestInterface
      */
-    public function setPrimaryKey($pk);
+    public function setPrimaryKey($pk): EntityRequestInterface;
 }

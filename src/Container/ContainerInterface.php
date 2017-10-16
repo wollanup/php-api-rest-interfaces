@@ -17,7 +17,7 @@ use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
 use Eukles\Service\RoutesClasses\RoutesClassesInterface;
 use Eukles\Slim\Handlers\ActionErrorInterface;
 use Eukles\Slim\Handlers\EntityRequestErrorInterface;
-use Slim\Http\Request;
+use Psr\Http\Message\ServerRequestInterface;
 use Slim\Interfaces\RouterInterface;
 
 /**
@@ -43,55 +43,55 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     /**
      * @return ActionErrorInterface
      */
-    public function getActionErrorHandler();
+    public function getActionErrorHandler(): ActionErrorInterface;
     
     /**
      * @return ConfigInterface
      */
-    public function getConfig();
+    public function getConfig(): ConfigInterface;
     
     /**
      * @return EntityFactoryInterface
      */
-    public function getEntityFactory();
+    public function getEntityFactory(): EntityFactoryInterface;
     
     /**
      * @return EntityRequestErrorInterface
      */
-    public function getEntityRequestErrorHandler();
+    public function getEntityRequestErrorHandler(): EntityRequestErrorInterface;
     
     /**
-     * @return Request
+     * @return ServerRequestInterface
      */
-    public function getRequest();
+    public function getRequest(): ServerRequestInterface;
     
     /**
      * @return RequestPaginationInterface
      */
-    public function getRequestPagination();
+    public function getRequestPagination(): RequestPaginationInterface;
     
     /**
      * @return RequestQueryModifierInterface
      */
-    public function getRequestQueryModifier();
+    public function getRequestQueryModifier(): RequestQueryModifierInterface;
     
     /**
      * @return ResponseBuilderInterface
      */
-    public function getResponseBuilder();
+    public function getResponseBuilder(): ResponseBuilderInterface;
     
     /**
      * @return ResponseFormatterInterface
      */
-    public function getResponseFormatter();
+    public function getResponseFormatter(): ResponseFormatterInterface;
     
     /**
      * @return RouterInterface
      */
-    public function getRouter();
+    public function getRouter(): RouterInterface;
     
     /**
      * @return RoutesClassesInterface
      */
-    public function getRoutesClasses();
+    public function getRoutesClasses(): RoutesClassesInterface;
 }

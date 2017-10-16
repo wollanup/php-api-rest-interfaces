@@ -26,7 +26,7 @@ interface RouteMapInterface extends \Iterator
      *
      * @return RouteInterface
      */
-    public function add($method, $pattern);
+    public function add($method, $pattern): RouteInterface;
     
     /**
      * self::add('DELETE', $pattern) shortcut
@@ -35,7 +35,7 @@ interface RouteMapInterface extends \Iterator
      *
      * @return RouteInterface
      */
-    public function delete($pattern);
+    public function delete($pattern): RouteInterface;
     
     /**
      * self::add('GET', $pattern) shortcut
@@ -44,42 +44,42 @@ interface RouteMapInterface extends \Iterator
      *
      * @return RouteInterface
      */
-    public function get($pattern);
+    public function get($pattern): RouteInterface;
     
     /**
      * @return string|ActionInterface
      */
-    public function getActionClass();
+    public function getActionClass(): string;
     
     /**
      * @return ContainerInterface
      */
-    public function getContainer();
+    public function getContainer(): ContainerInterface;
     
     /**
      * @return string
      */
-    public function getPackage();
+    public function getPackage(): string;
     
     /**
      * @return string
      */
-    public function getPrefix();
+    public function getPrefix(): string;
     
     /**
      * @return string
      */
-    public function getResource();
+    public function getResource(): string;
     
     /**
      * @return bool
      */
-    public function hasPackage();
+    public function hasPackage(): bool;
     
     /**
      * @return bool
      */
-    public function isSubResourceOfPackage();
+    public function isSubResourceOfPackage(): bool;
     
     /**
      * self::add('PATCH', $pattern) shortcut
@@ -88,7 +88,7 @@ interface RouteMapInterface extends \Iterator
      *
      * @return RouteInterface
      */
-    public function patch($pattern);
+    public function patch($pattern): RouteInterface;
     
     /**
      * self::add('POST', $pattern) shortcut
@@ -97,7 +97,7 @@ interface RouteMapInterface extends \Iterator
      *
      * @return RouteInterface
      */
-    public function post($pattern);
+    public function post($pattern): RouteInterface;
     
     /**
      * self::add('PUT', $pattern) shortcut
@@ -106,7 +106,7 @@ interface RouteMapInterface extends \Iterator
      *
      * @return RouteInterface
      */
-    public function put($pattern);
+    public function put($pattern): RouteInterface;
     
     /**
      * Map all Routes contained in this RouteMap to th given Router Object
@@ -116,4 +116,11 @@ interface RouteMapInterface extends \Iterator
      * @return mixed
      */
     public function registerRoutes(RouterInterface $router);
+    
+    /**
+     * @param ContainerInterface $c
+     *
+     * @return RouteMapInterface
+     */
+    public function setContainer(ContainerInterface $c): RouteMapInterface;
 }

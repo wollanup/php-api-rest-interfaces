@@ -31,7 +31,7 @@ interface EntityFactoryInterface
         callable $next,
         $nameOfParameterToAdd = null,
         $useRequestParameters = true
-    );
+    ): ResponseInterface;
     
     /**
      * Fetch an existing instance of activeRecord and add it to Request attributes
@@ -52,7 +52,7 @@ interface EntityFactoryInterface
         callable $next,
         $nameOfParameterToAdd = null,
         $useRequestParameters = true
-    );
+    ): ResponseInterface;
     
     /**
      * Fetch an existing collection of activeRecords and add it to Request attributes
@@ -71,6 +71,6 @@ interface EntityFactoryInterface
         ResponseInterface $response,
         callable $next,
         $nameOfParameterToAdd = null
-    );
+    ): ResponseInterface;
     
 }

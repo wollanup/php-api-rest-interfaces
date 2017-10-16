@@ -12,17 +12,17 @@ interface ConfigInterface
 {
     
     /**
-     * @param      $key
-     * @param null $default
+     * @param string $key
+     * @param null   $default
      *
      * @return mixed
      */
-    public function get($key, $default = null);
+    public function get(string $key, $default = null);
     
     /**
      * @param $key
      *
      * @return bool
      */
-    public function has($key);
+    public function has(string $key): bool;
 }

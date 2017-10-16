@@ -35,10 +35,10 @@ interface PaginationInterface
     /**
      * @return int
      */
-    public function getLimit();
+    public function getLimit(): int;
     
     /**
      * @return int
      */
-    public function getPage();
+    public function getPage(): int;
 }

@@ -15,6 +15,7 @@
     }
   },
   "require": {
+    "php": "^7.0",
     "slim/slim": "^3.4",
     "propel/propel": "~2.0@dev",
     "zendframework/zend-permissions-acl": "^2.6"
