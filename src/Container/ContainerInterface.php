@@ -14,18 +14,18 @@ use Eukles\Service\Pagination\RequestPaginationInterface;
 use Eukles\Service\QueryModifier\RequestQueryModifierInterface;
 use Eukles\Service\ResponseBuilder\ResponseBuilderInterface;
 use Eukles\Service\ResponseFormatter\ResponseFormatterInterface;
+use Eukles\Service\Router\RouterInterface;
 use Eukles\Service\RoutesClasses\RoutesClassesInterface;
 use Eukles\Slim\Handlers\ActionErrorInterface;
 use Eukles\Slim\Handlers\EntityRequestErrorInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Slim\Interfaces\RouterInterface;
 
 /**
  * Interface Container
  */
 interface ContainerInterface extends \Psr\Container\ContainerInterface
 {
-    
+
     const RESPONSE_FORMATTER = 'responseFormatter';
     const RESPONSE_BUILDER = 'responseBuilder';
     const REQUEST_QUERY_MODIFIER = 'requestQueryModifier';
@@ -39,57 +39,57 @@ interface ContainerInterface extends \Psr\Container\ContainerInterface
     const ROUTES_CLASSES = 'routesClasses';
     const ENTITY_REQUEST_ERROR_HANDLER = 'entityRequestErrorHandler';
     const ACTION_ERROR_HANDLER = 'actionErrorHandler';
-    
+
     /**
      * @return ActionErrorInterface
      */
     public function getActionErrorHandler(): ActionErrorInterface;
-    
+
     /**
      * @return ConfigInterface
      */
     public function getConfig(): ConfigInterface;
-    
+
     /**
      * @return EntityFactoryInterface
      */
     public function getEntityFactory(): EntityFactoryInterface;
-    
+
     /**
      * @return EntityRequestErrorInterface
      */
     public function getEntityRequestErrorHandler(): EntityRequestErrorInterface;
-    
+
     /**
      * @return ServerRequestInterface
      */
     public function getRequest(): ServerRequestInterface;
-    
+
     /**
      * @return RequestPaginationInterface
      */
     public function getRequestPagination(): RequestPaginationInterface;
-    
+
     /**
      * @return RequestQueryModifierInterface
      */
     public function getRequestQueryModifier(): RequestQueryModifierInterface;
-    
+
     /**
      * @return ResponseBuilderInterface
      */
     public function getResponseBuilder(): ResponseBuilderInterface;
-    
+
     /**
      * @return ResponseFormatterInterface
      */
     public function getResponseFormatter(): ResponseFormatterInterface;
-    
+
     /**
      * @return RouterInterface
      */
     public function getRouter(): RouterInterface;
-    
+
     /**
      * @return RoutesClassesInterface
      */
